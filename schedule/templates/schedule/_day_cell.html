@@ -1,11 +1,11 @@
 {% load scheduletags %}
 {% ifnotequal day.start.month month.start.month %}
-  <td class="muted"></td>
+  <td class="muted" style="border:1px solid black;width:14%;"></td>
 {% else %}
   {% if day.has_occurrences %}
-    <td class="btn-primary gradient">
+    <td class="btn-primary gradient" style="border:1px solid black;vertical-align:top;width:14%;">
   {% else %}
-    <td>
+    <td style="border:1px solid black;vertical-align:top;width:14%">
   {% endif %}
   <a href="{% url "day_calendar" calendar.slug %}{% querystring_for_date day.start 3 %}">
     <strong>{{day.start.day}}</strong>

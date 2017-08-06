@@ -26,19 +26,18 @@
 
 <div class="row row-centered">
   {% for day in period.get_days %}
-    <div class="col-md-3">
+    <div class="col-md-3" style="float:left;margin:2%;">
       <div class="row row-centered">
         <a href="{% url "day_calendar" calendar.slug %}{% querystring_for_date day.start 3 %}">
           {{day.start|date:"l, d"}}
-        </a>
       </div>
       {% if forloop.first %}
-          {% daily_table day %}
+        {% daily_table day %}
       {% else %}
-          {% daily_table day %}
+        {% daily_table day %}
       {% endif %}
     </div>
-  {% endfor %}
+{% endfor %}
 </div>
 
 {% endblock %}

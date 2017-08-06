@@ -22,9 +22,6 @@ class EventForm(SpanForm):
     def __init__(self, *args, **kwargs):
         super(EventForm, self).__init__(*args, **kwargs)
 
-    end_recurring_period = forms.DateTimeField(label=_("End recurring period"),
-                                               help_text=_("This date is ignored for one time only events."),
-                                               required=False)
 
     class Meta(object):
         model = Event

@@ -1,17 +1,17 @@
 {% load scheduletags %}
-<table class="table-condensed table-striped">
+<table class="table-condensed table-striped" style="width:100%;border:1px solid black;">
 {% if day_names %}
 <thead>
-  <th>&nbsp;</th>
+  <th style="border:1px solid black;">Week</th>
   {% for day_name in day_names %}
-    <th>{{ day_name }}</th>
+    <th style="border:1px solid black;">{{ day_name }}</th>
   {% endfor %}
 </thead>
 {% endif %}
 <tbody>
   {% for week in month.get_weeks %}
-      <tr>
-      <td>
+      <tr style="border:1px solid black;">
+      <td style="text-align:center; padding:50px 0; width=2%">
           <a href="{% url "week_calendar" calendar.slug %}{% querystring_for_date week.start 3 %}">
               {{week.start|date:"W"}}
           </a>

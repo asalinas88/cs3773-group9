@@ -29,5 +29,10 @@
       {% daily_table period %}
     </div>
 </div>
+<ul><li>
+    <a href="{% url "calendar_create_event" calendar.slug %}">
+      {% trans "Make Appointment" %}
+     </a>
+</li></ul>
 
 {% endblock %}
