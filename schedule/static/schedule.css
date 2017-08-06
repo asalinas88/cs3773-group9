@@ -80,6 +80,7 @@ fieldset[disabled] .btn-custom.active {
 
 .row-centered {
     text-align:center;
+    display: inline-block;
 }
 
 .modal-content {
@@ -90,4 +91,8 @@ fieldset[disabled] .btn-custom.active {
      float: none;
      margin-left: auto;
      margin-right: auto;
+}
+
+#demo{
+    color:blue;
 }

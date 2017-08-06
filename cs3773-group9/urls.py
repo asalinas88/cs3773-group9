@@ -15,14 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from django.views.generic import TemplateView
 
 from users import views as user_views
+from schedule import views as schedule_views
 
 urlpatterns = [
     url(r'^profile/', user_views.profile, name='profile'),
     url(r'^', include('home.urls')),  # tell django to read urls.py in home app
-    url(r'^fullcalendar/', TemplateView.as_view(template_name="fullcalendar.html"), name='fullcalendar'),
+    url(r'^appointment/', schedule_views.CreateView.as_view(), name='appointment'),
     url(r'^schedule/', include('schedule.urls'), name='scheduler'),
     url(r'^admin/', admin.site.urls),
 ]
