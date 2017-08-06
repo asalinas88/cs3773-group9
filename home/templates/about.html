@@ -1,19 +1,20 @@
+
+{% extends 'base.html' %}<!--Add this for inheritance-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>About Us</title>
+  <meta charset="UTF-8">
+  <title>{% block title %}Welcome Home {% endblock %}</title>
 </head>
 <body>
-  <p>
-  We are a group of Django enthusiasts with the following idiosyncrasies:
-
-  <ol>
-    <li>We only eat bananas on Saturdays.</li>
-    <li>We love making playing football on rainy days.</li>
-  </ol>
-  </p>
-  <a href="{% url 'home' %}">Go Home</a>
-  <a href="{% url 'about' %}">About This Site</a>
+  {% block pagecontent %}
+    <p>Hi
+    </p>
+    <a href="{% url 'home' %}">Go Home</a>
+    <a href="{% url 'about' %}">About This Site</a>
+  {% endblock %}
 </body>
 </html>
+ <!-- <a href="/">Go Home</a>
+  <a href="/">About This Site</a>-->
