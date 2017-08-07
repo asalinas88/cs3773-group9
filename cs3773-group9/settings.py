@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'users',
     'home',
     'schedule',
@@ -140,3 +144,8 @@ BOWER_INSTALLED_APPS=(
     'jquery-ui',
     'bootstrap'
 )
+
+SITE_ID = 1
+AUTH_USER_MODEL = 'users.Patient'
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 3
+LOGIN_REDIRECT_URL = '/'

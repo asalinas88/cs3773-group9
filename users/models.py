@@ -1,9 +1,9 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
 # Create your models here.
-class Patient(User):
+class Patient(AbstractUser):
 
     home_address = models.TextField(max_length=255)
 
@@ -12,7 +12,7 @@ class Patient(User):
         verbose_name_plural = 'Patients'
 
 
-class Staff(User):
+class Staff(models.Model):
 
     class Meta:
         verbose_name = 'Staff'
