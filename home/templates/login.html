@@ -4,10 +4,18 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-  <h2>Login</h2>
-  <form method="post">
+<h2><center><font size="100" color="white">Login</font></center></h2>
+  <form method="post"><center>
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Login</button>
+      <button type="submit"><font color="white">Login</font></button></center>
+      <!-- check for errors -->
+      {% if form.errors %}
+      <p class=" label label-danger">
+          Your username and password did not match.
+          Please try again.
+      </p>
+      {% endif %}
+      <!-- end of error checking -->
   </form>
 {% endblock %}

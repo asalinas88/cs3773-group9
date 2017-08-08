@@ -18,20 +18,20 @@
 <body>
   <header>
   <h1>
-  <font size="100" color="white"><center>Welcome to EMIS!</center></font>
+  <font size="100" color="white"><center>EMIS</center></font>
   </h1>
   {% if user.is_authenticated %}
   Hi {{ user.username }}!
   <a href="{%url 'logout' %}"></a>
   {% else %}
-  <a href="{% url 'login' %}">login</a>
+  <a href="{% url 'login' %}"><center>LOGIN</center></a>
   {% endif %}
   </header>
   <hr>
   <main>
   {% block content %}
   {% endblock %}
- >
+
 
  <!-- <a href="/">Go Home</a>
   <a href="/">About This Site</a>-->
