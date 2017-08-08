@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+{# make modifiable head elements #}
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Welcome Home{% endblock title %}</title>
+  <!--Styles-->
+  <style style="text/css">
+    body{
+    background-image: url("https://previews.123rf.com/images/rungaroon/rungaroon1203/rungaroon120300061/12938503-Computer-designed-grunge-style-textured-medical-background-Stock-Photo.jpg");
+    <!--background-position: 200% 200%;-->
+    background-repeat: no repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <header>
+  <h1>
+  <font size="100" color="white"><center>Welcome to EMIS!</center></font>
+  </h1>
+  {% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <a href="{%url 'logout' %}"></a>
+  {% else %}
+  <a href="{% url 'login' %}">login</a>
+  {% endif %}
+  </header>
+  <hr>
+  <main>
+  {% block content %}
+  {% endblock %}
+ >
+
+ <!-- <a href="/">Go Home</a>
+  <a href="/">About This Site</a>-->
+</body>
+</html>
