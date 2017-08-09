@@ -30,4 +30,5 @@ urlpatterns = [
     url(r'^fullcalendar/', TemplateView.as_view(template_name="fullcalendar.html"), name='fullcalendar'),
     url(r'^schedule/', include('schedule.urls'), name='scheduler'),
     url(r'^admin/', admin.site.urls),
+    url(r'^upload/', user_views.upload, name='upload'),
 ]
