@@ -32,5 +32,6 @@ urlpatterns = [
     url(r'^schedule/', include('schedule.urls'), name='scheduler'),
     url(r'^admin/', admin.site.urls),
     url(r'^upload/', user_views.upload, name='upload'),
+    url(r'^success/', TemplateView.as_view(template_name="success.html"), name='success'),
     url(r'^about/', TemplateView.as_view(template_name='about.html'), name='about'),
 ]
