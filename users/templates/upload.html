@@ -5,6 +5,40 @@
     <title>Patient Chart Upload</title>
 </head>
 <body>
+<center>UPLOAD</center>
+<form name = "form" enctype = "multipart/form-data"
+         action = "{% url "success" %}" method = "POST" >{% csrf_token %}
+
+         <div style = "max-width:470px;">
+            <div style="text-align: center;">
+               <input style = "margin-left:122%;"
+                      placeholder = "File Name" name= "file" />
+            </div>
+         </div>
+
+         <br>
+
+         <div style = "max-width:470px;">
+            <div style="text-align: center;">
+               <input type = "file" style = "margin-left:122%;"
+                  placeholder = "File" name = "file" />
+            </div>
+         </div>
+
+         <br>
+
+         <div style = "max-width:470px;">
+            <center>
+
+               <button style = "border:0px;background-color:#f44c00; margin-top:8%;
+                  height:35px; width:80%; margin-left:102%;" type = "submit" value = "Submit" >
+                  <strong>Submit</strong>
+               </button>
+
+            </center>
+         </div>
+
+      </form>
 
 </body>
 </html>
