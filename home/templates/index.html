@@ -1,36 +1,15 @@
-{% extends 'base.html' %}
 
-
-
-<!-- extends base template from here -->
-{% block title %} Login {% endblock %}
-{%block content %}
-<h1><font size="7" color="white"><center>Welcome to the home page!</center></font></h1>
-<h2><font size="5" color="white"><center>CS3773 Group 9</center></font></h2>
-{% endblock %}
-
-
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Welcome Home</title> -->
-  <!--Styles-->
- <!-- <style style="text/css">
-    body{
-    background-image: url("https://previews.123rf.com/images/rungaroon/rungaroon1203/rungaroon120300061/12938503-Computer-designed-grunge-style-textured-medical-background-Stock-Photo.jpg");
-    <!--background-position: 200% 200%;-->
-    <!--background-repeat: no repeat;
-      background-size: cover;
-    }-->
- <!-- </style>-->
-<!--</head>
+  <title>Welcome Home</title>
+</head>
 <body>
-  <p>
-  <font size="100" color="white"><center>Welcome to EMIS!</center></font>
-  <font size="20" color="white"><center>CS3773 Group 9</center></font>
+  <p>"Home page"
   </p>
- <!-- <a href="/">Go Home</a>
-  <a href="/">About This Site</a>-->
-<!--</body>
-</html>-->
+  <a href="{% url 'home' %}">Go Home</a>
+  <a href="{% url 'about' %}">About This Site</a>
+  <a href="/schedule">Appointments</a>
+</body>
+</html>

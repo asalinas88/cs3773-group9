@@ -1,0 +1,38 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="14">
+            <item index="0" class="java.lang.String" itemvalue="compact_calendar" />
+            <item index="1" class="java.lang.String" itemvalue="month_calendar" />
+            <item index="2" class="java.lang.String" itemvalue="tri_month_calendar" />
+            <item index="3" class="java.lang.String" itemvalue="year_calendar" />
+            <item index="4" class="java.lang.String" itemvalue="week_calendar" />
+            <item index="5" class="java.lang.String" itemvalue="day_calendar" />
+            <item index="6" class="java.lang.String" itemvalue="upcoming_events_feed" />
+            <item index="7" class="java.lang.String" itemvalue="calendar_create_event" />
+            <item index="8" class="java.lang.String" itemvalue="event" />
+            <item index="9" class="java.lang.String" itemvalue="edit_event" />
+            <item index="10" class="java.lang.String" itemvalue="delete_event" />
+            <item index="11" class="java.lang.String" itemvalue="bootstrap" />
+            <item index="12" class="java.lang.String" itemvalue="schedule.css" />
+            <item index="13" class="java.lang.String" itemvalue="jquery-ui" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyCompatibilityInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ourVersions">
+        <value>
+          <list size="2">
+            <item index="0" class="java.lang.String" itemvalue="2.7" />
+            <item index="1" class="java.lang.String" itemvalue="3.6" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

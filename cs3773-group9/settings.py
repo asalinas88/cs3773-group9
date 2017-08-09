@@ -35,6 +35,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'users',
     'home',
     'schedule',
@@ -123,10 +127,11 @@ STATICFILES_FINDERS = [
 
 # adding new lines
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(os.path.dirname(BASE_DIR), "cs3773-group9", "static", "static"),
+    #os.path.join(BASE_DIR, 'static'),
 )
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 BOWER_COMPONENTS_ROOT = '/PyCharmProjects/cs3773-group9/components'
 BOWER_INSTALLED_APPS = (
@@ -135,6 +140,6 @@ BOWER_INSTALLED_APPS = (
     'bootstrap'
 )
 
-STATIC_URL = '/static/'
-
+SITE_ID = 1
 LOGIN_REDIRECT_URL = 'home'
+AUTH_USER_MODEL = 'users.EMISUser'
