@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,6 @@
     <title>Title</title>
 </head>
 <body>
-<p>Using custom signup</p>
 {% load i18n %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
@@ -19,6 +19,7 @@
 
 <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %}
+  {{ form|crispy }}
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}

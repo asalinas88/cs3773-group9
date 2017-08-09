@@ -36,13 +36,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
     'users',
     'home',
     'schedule',
     'djangobower',
+    'crispy_forms',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +61,7 @@ ROOT_URLCONF = 'cs3773-group9.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': [os.path.join(BASE_DIR,)]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -73,6 +74,14 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 WSGI_APPLICATION = 'cs3773-group9.wsgi.application'
 
@@ -141,5 +150,6 @@ BOWER_INSTALLED_APPS = (
 )
 
 SITE_ID = 1
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = '/'
+ACCOUNT_LOGOUT_REDICRECT_URL = '/'
 AUTH_USER_MODEL = 'users.EMISUser'
