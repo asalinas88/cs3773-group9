@@ -1,14 +1,41 @@
-
 {% extends 'base.html' %}
-
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<h2><center><font size="100" color="white">Login</font></center></h2>
+ <style style="text/css">
+    form input {
+        outline: 0;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        background-color: rgba(255, 255, 255, 0.2);
+        width: 250px;
+        border-radius: 3px;
+        padding: 10px 15px;
+        margin: 0 auto 10px auto;
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        color: white;
+        font-weight: 300;
+        }
+    form input:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+        }
+    form input:focus {
+        background-color: white;
+        width: 300px;
+        color: #53e3a6;
+    }
+
+ </style>
+<h2><font size="100" color="white"><center>Sign in</center></font></h2>
   <form method="post"><center>
     {% csrf_token %}
-    {{ form.as_p }}
-      <button type="submit"><font color="white">Login</font></button></center>
+    <!-- sign in form -->
+    <!--<center>-->
+      {{ form.as_p }}
+
+      <button type="submit"><font color="black">Sign in</font></button>
+    <!--</center>-->
       <!-- check for errors -->
       {% if form.errors %}
       <p class=" label label-danger">
