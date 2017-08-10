@@ -35,4 +35,6 @@ urlpatterns = [
     url(r'^upload/', user_views.upload, name='upload'),
     url(r'^success/', TemplateView.as_view(template_name="success.html"), name='success'),
     url(r'^about/', TemplateView.as_view(template_name='about.html'), name='about'),
+
+
 ]
