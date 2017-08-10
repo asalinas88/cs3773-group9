@@ -6,7 +6,7 @@ Have a wonderful day!
 
 <!-- extends base template from here -->
 {% block content %}
-<h2><font color="white">Logged out.</center></h2>
-<p>You have been successfully logged out.</p>
-<p><a href="{% url 'login' %}?next=/login">Log in</a> again.</p>
+<h2><font size="7" color="white"><center>Signed out</center></font></h2>
+<p><center><font size ="4" color="white">You have been successfully logged out.</center></font></p>
+<p><center><a href="{% url 'login' %}?next=/login">Log in</a> <font color="white">again.</font></center></p>
 {% endblock %}

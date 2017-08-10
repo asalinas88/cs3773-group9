@@ -23,19 +23,28 @@
     form input:focus {
         background-color: white;
         width: 300px;
-        color: #53e3a6;
+        color: #0f1184;
+
+
     }
 
  </style>
+
 <h2><font size="100" color="white"><center>Sign in</center></font></h2>
-  <form method="post"><center>
+  <!--<form method="post"><-->
+  <form class="form" method="post" action="." >
     {% csrf_token %}
+    <input type="text" placeholder="Username" name="username">
+    <input type="password" placeholder="Password" name="password">
+
     <!-- sign in form -->
-    <!--<center>-->
-      {{ form.as_p }}
+    <center>
+      <!--{{ form.as_p }}-->
+
 
       <button type="submit"><font color="black">Sign in</font></button>
-    <!--</center>-->
+      <button type="button" onclick="window.location.href='/signup/' ">Sign Up</button>
+    </center>
       <!-- check for errors -->
       {% if form.errors %}
       <p class=" label label-danger">
