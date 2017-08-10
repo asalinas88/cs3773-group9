@@ -13,35 +13,46 @@
     <!-- Custom styles for this template -->
     <link href="{% static "css/theme.css" %}" rel="stylesheet">
   <!--Styles-->
-  <style style="text/css">
+
+ <style style="text/css">
     body{
-    background-image: url("https://previews.123rf.com/images/rungaroon/rungaroon1203/rungaroon120300061/12938503-Computer-designed-grunge-style-textured-medical-background-Stock-Photo.jpg");
+    <!--background-color:#1997ff;-->
+    <!--background-image: url("https://previews.123rf.com/images/rungaroon/rungaroon1203/rungaroon120300061/12938503-Computer-designed-grunge-style-textured-medical-background-Stock-Photo.jpg");-->
     <!--background-position: 200% 200%;-->
-    background-repeat: no repeat;
-      background-size: cover;
+   <!-- background-repeat: no repeat;-->
+    <!--  background-size: cover;-->
     }
   </style>
 </head>
-    <body>
+
+   <body>
       <header>
-          <h1>
-          <font size="100" color="white"><center>EMIS</center></font>
+         <h1>
+          <font size="7" color="white"><center>EMIS</center></font>
           </h1>
           {% if user.is_authenticated %}
-          Hi {{ user.username }}!
+          <font size="7" color="black">
+          <center>
+          Welcome {{ user.username }}!
+          </center>
           <a href="{%url 'logout' %}"></a>
-          {% else %}
-          <a href="{% url 'login' %}"><center>LOGIN</center></a>
+
+
           {% endif %}
-      </header>
+     </header>
+
       <hr>
       <main>
           {% block content %}
+      <!-- prompt user to log in -->
+      <a href="{% url 'login' %}"><center><img class="aligntopcenter" title="login" src="https://uniim1.shutterfly.com/ng/services/mediarender/THISLIFE/021042610076/media/93299580558/x-small/1502343846968/enhance" width="291" height="58"></center></a>
+      <a href="{% url 'account_signup' %}"><center><img class="aligntopcenter" title="signup" src="https://uniim1.shutterfly.com/ng/services/mediarender/THISLIFE/021042610076/media/93299582946/x-small/1502343921287/enhance" width="291" height="58"</center></a>
+
           {% endblock %}
       </main>
 
 
      <!-- <a href="/">Go Home</a>
       <a href="/">About This Site</a>-->
-    </body>
+   </body>
 </html>

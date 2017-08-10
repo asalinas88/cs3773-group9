@@ -36,13 +36,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
     'users',
     'home',
     'schedule',
     'djangobower',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -60,8 +60,9 @@ ROOT_URLCONF = 'cs3773-group9.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,9 +127,11 @@ STATICFILES_FINDERS = [
 ]
 
 # adding new lines
+
 STATICFILES_DIRS = (
     os.path.join(os.path.dirname(BASE_DIR), "cs3773-group9", "static", "static"),
     #os.path.join(BASE_DIR, 'static'),
+
 )
 
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')

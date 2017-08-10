@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='index.html'), name='home'),
     url(r'^login/$', auth_views.login, {'template_name': 'account/login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'template_name': 'account/logout.html'}, name='logout'),
+    url(r'^signup/$', TemplateView.as_view(template_name="account/signup.html"), name='signup'),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^profile/', user_views.profile, name='profile'),
     url(r'^$', include('home.urls')),  # tell django to read urls.py in home app
