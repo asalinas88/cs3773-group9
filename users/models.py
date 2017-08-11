@@ -1,16 +1,22 @@
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, User
 from django.db import models
+from django.dispatch import receiver
+from django.db.models.signals import post_save
+from django.conf import settings
 
 
 # Create your models here.
-class EMISUser(AbstractUser):
-    pass
+# class EMISUser(AbstractUser):
+#     pass
 
 
 class Patient(models.Model):
 
-    user = models.OneToOneField(EMISUser, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     home_address = models.TextField(max_length=255)
+
+    def __str__(self):
+        return self.user.first_name + " " + self.user.last_name
 
     class Meta:
         verbose_name = 'Patient'
@@ -19,7 +25,10 @@ class Patient(models.Model):
 
 class Staff(models.Model):
 
-    user = models.OneToOneField(EMISUser, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user.first_name + " " + self.user.last_name
 
     class Meta:
         verbose_name = 'Staff'
