@@ -1,23 +1,12 @@
 # cs3773-group9
+Two apps that were used in this project were django-allauth and django-scheduler
+
+# Django-scheduler
 Installation
 ========
 
 ```bash
 pip install django-scheduler
-```
-
-edit your `settings.py`
-
-add to `INSTALLED_APPS`:
-
-```python
-'schedule',
-```
-
-add to `TEMPLATE_CONTEXT_PROCESSORS`:
-
-```python
-"django.template.context_processors.request"
 ```
 
 Static assets
@@ -34,41 +23,29 @@ npm install -g bower
 pip install django-bower
 ```
 
-edit your `settings.py`
-
-add to `INSTALLED_APPS`:
-
-```python
-'djangobower',
-```
-
-Add staticfinder to `STATICFILES_FINDERS`:
-
-```
-'djangobower.finders.BowerFinder',
-```
-
-Specify the path to the components root (you need to use an absolute
-path):
-
-```
-BOWER_COMPONENTS_ROOT = '/PROJECT_ROOT/components/'
-```
-
-Add the following Bower dependencies for scheduler:
-
-```
-BOWER_INSTALLED_APPS = (
-    'jquery',
-    'jquery-ui',
-    'bootstrap'
-)
-```
-
-Last step, install bower dependencies with:
+If necessary, install bower dependencies with:
 
 ```
 ./manage.py bower install
 ```
 
 Remember to execute "python manage.py collectstatic"
+
+# Django-allauth
+
+Installation
+============
+
+Django
+------
+
+Python package::
+
+    pip install django-allauth
+
+Post-Installation (if necessary)
+-----------------
+
+In your Django root execute the command below to create your database tables::
+
+    ./manage.py migrate
