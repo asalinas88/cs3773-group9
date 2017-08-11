@@ -17,6 +17,6 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='index.html'), name='home'),
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'template_name': 'logout.html'}, name='logout'),
-    #url(r'^signup/$', auth_views.signup, {'template_name': 'signup.html'}, name='signup'),
+    url(r'^signup/$', TemplateView.as_view(template_name= 'signup.html'), name='signup'),
     #url(r'^signup/$', TemplateView.as_view(template_name='sigup.html'), name='signup');
 ]
