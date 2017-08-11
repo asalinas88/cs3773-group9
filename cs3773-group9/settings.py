@@ -40,9 +40,11 @@ INSTALLED_APPS = [
     'home',
     'schedule',
     'djangobower',
+    'crispy_forms',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'axes',
 ]
 
 MIDDLEWARE = [
@@ -60,9 +62,8 @@ ROOT_URLCONF = 'cs3773-group9.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
-
-
+        'DIRS': [os.path.join(BASE_DIR,)]
+        ,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,6 +75,14 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 WSGI_APPLICATION = 'cs3773-group9.wsgi.application'
 
@@ -127,11 +136,9 @@ STATICFILES_FINDERS = [
 ]
 
 # adding new lines
-
 STATICFILES_DIRS = (
     os.path.join(os.path.dirname(BASE_DIR), "cs3773-group9", "static", "static"),
     #os.path.join(BASE_DIR, 'static'),
-
 )
 
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
@@ -145,5 +152,9 @@ BOWER_INSTALLED_APPS = (
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
-ACCOUNT_LOGOUT_REDIRECT_URL = 'login'
+ACCOUNT_LOGOUT_REDICRECT_URL = '/'
 AUTH_USER_MODEL = 'users.EMISUser'
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_COOKIE_AGE = 60
+AXES_LOGIN_FAILURE_LIMIT = 3
+

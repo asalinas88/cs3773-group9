@@ -5,8 +5,22 @@ Have a wonderful day!
 {% endblock %}
 
 <!-- extends base template from here -->
+{% load i18n %}
+
+{% block head_title %}{% trans "Sign Out" %}{% endblock %}
 {% block content %}
-<h2><font size="7" color="white"><center>Signed out</center></font></h2>
-<p><center><font size ="4" color="white">You have been successfully logged out.</center></font></p>
-<p><center><a href="{% url 'login' %}?next=/login">Log in</a> <font color="white">again.</font></center></p>
+<div class="col-md-4 col-md-offset-4">
+<h1>{% trans "Sign Out" %}</h1>
+
+<p>{% trans 'Are you sure you want to sign out?' %}</p>
+
+<form method="post" action="{% url 'account_logout' %}">
+  {% csrf_token %}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+  {% endif %}
+  <button class="btn btn-default" type="submit">{% trans 'Sign Out' %}</button>
+</form>
+
+</div>
 {% endblock %}

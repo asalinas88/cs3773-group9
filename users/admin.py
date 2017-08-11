@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Patient, Staff
 
+from .models import Patient, Staff
 
 # Register the Admin classes for Patient using the decorator
 @admin.register(Patient)

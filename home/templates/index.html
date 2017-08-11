@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
-
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,12 +7,8 @@
 </head>
 <body>
   <p>"Home page"
-    {% if user.is_authenticated %}
-          Hi {{ user.username }}!
-    {% endif %}
   </p>
   <a href="{% url 'home' %}">Go Home</a>
-  <a href="{% url 'about' %}">About This Site</a>
   <a href="/schedule">Appointments</a>
 </body>
 </html>
